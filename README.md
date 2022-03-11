@@ -2,6 +2,8 @@
 
 Приведены настройки сервера для операционной системы Debian.
 
+Файл [_server.conf](openvpn/_server.conf) содержит стандартные настройки сервера OpenVPN из документации `/usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz`.
+
 ## OpenVPN сервер для клиентов
 
 Конфигурационный файл: [server.conf](openvpn/server.conf)
