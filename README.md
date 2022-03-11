@@ -1,5 +1,7 @@
 # Настройка OpenVPN-сервера
 
+Приведены настройки сервера для операционной системы Debian.
+
 ## OpenVPN сервер для клиентов
 
 Конфигурационный файл: [server.conf](openvpn/server.conf)
@@ -32,3 +34,6 @@ sudo systemctl stop openvpn@server
 sudo systemctl restart openvpn@server
 ```
 
+```
+sudo systemctl status openvpn@server
+```
