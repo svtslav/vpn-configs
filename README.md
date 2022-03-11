@@ -67,3 +67,7 @@ sudo systemctl status openvpn@server-mikrotik
 ```
 sudo easyrsa build-server-full <server_name> nopass
 ```
+
+## Полезные ссылки
+1. https://www.digitalocean.com/community/tutorials/how-to-set-up-an-openvpn-server-on-debian-10
+2. https://interface31.ru/tech_it/2019/10/nastroyka-dvuh-i-bolee-openvpn-serverov-na-odnom-servere.html
