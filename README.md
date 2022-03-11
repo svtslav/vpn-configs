@@ -68,6 +68,29 @@ sudo systemctl status openvpn@server-mikrotik
 sudo easyrsa build-server-full <server_name> nopass
 ```
 
+## Создание клиентов OpenVPN
+
+Для создания клиентов написан bash-скрипт [make-client.sh](openvpn/make-client.sh).
+
+```
+cd /etc/openvpn
+sudo ./make-client.sh <client_name> [mikrotik]
+```
+
+Скрипт `make-client.sh` создадёт директорию для каждого клиента `/etc/openvpn/clients/<client_name>/` и размещает в ней:
+1. Сертификат клиента `<client_name>.crt`.
+2. Приватный ключ клиента `<client_name>.key`.
+3. Сертификат центра сертификации `ca.crt`.
+4. Файл для подключения к OpenVPN серверу `<client_name>.ovpn`.
+
+В скрипте предусмотрен флаг `mikrotik` для создания конфигурационного файла клиента OpenVPN для роутеров MikroTik.
+
+По умолчанию скрипт создаст обычный файл конфигурации.
+
+Файл [_client.conf](openvpn/_client.conf) – шаблон обычного конфигурационного файла клиента OpenVPN.
+
+Файл [_mikrotik.conf](openvpn/_mikrotik_.conf) – шаблон конфигурационного файла клиента OpenVPN для роутеров MikroTik.
+
 ## Полезные ссылки
 1. https://www.digitalocean.com/community/tutorials/how-to-set-up-an-openvpn-server-on-debian-10
 2. https://interface31.ru/tech_it/2019/10/nastroyka-dvuh-i-bolee-openvpn-serverov-na-odnom-servere.html
